@@ -20,7 +20,8 @@ class ESPTickView: UIView {
 
     let circle = CAShapeLayer()
 
-	var shouldAnimate: Bool = false
+    var shouldAnimate: Bool = false
+    
     //
     // MARK: - Initialisers
     //
@@ -99,56 +100,22 @@ class ESPTickView: UIView {
             // Add the animation to the circle
             circle.add(drawCircleAnimation, forKey: "drawCircleAnimation")
         } else {
-
-			circle.removeAllAnimations()
+	    circle.removeAllAnimations()
             circle.removeFromSuperlayer()
-//
-//            let center = CGPoint(x:self.bounds.width/2, y: self.bounds.height/2)
-//            let arcWidth: CGFloat = 1.0
-//            let radius: CGFloat = max(self.bounds.width, self.bounds.height) - arcWidth
-//            let startAngle: CGFloat = 7 * π / 4
-//            let endAngle: CGFloat = (7 * π / 4) - 0.0000001
-//            let circlePath = UIBezierPath(arcCenter: center,
-//                                          radius: radius/2 - arcWidth/2,
-//                                          startAngle: startAngle,
-//                                          endAngle: endAngle,
-//                                          clockwise: true)
-//            circlePath.lineWidth = arcWidth
-//            clearColor.setStroke()
-//            circlePath.stroke()
-//
-//            let tickPath = UIBezierPath()
-//            tickPath.lineWidth = 4.0 * 2
-//            tickPath.lineJoinStyle = CGLineJoin.round
-//            tickPath.lineCapStyle = CGLineCap.round
-//
-//            tickPath.move(to: CGPoint(
-//                x:bounds.width * 0.15 ,
-//                y:bounds.height * 0.5))
-//
-//            tickPath.addLine(to: CGPoint(
-//                x:bounds.width * 0.4,
-//                y:bounds.height * 0.75))
-//
-//            tickPath.addLine(to: CGPoint(
-//                x:bounds.width * 0.8 ,
-//                y:bounds.height * 0.25))
-//            clearColor.setStroke()
-//            tickPath.stroke()
         }
     }
 
     func animate()
     {
 
-		shouldAnimate = true
+	shouldAnimate = true
         setNeedsDisplay()
 
     }
 
     func hide()
     {
-		shouldAnimate = false
+	shouldAnimate = false
         setNeedsDisplay()
     }
 }
